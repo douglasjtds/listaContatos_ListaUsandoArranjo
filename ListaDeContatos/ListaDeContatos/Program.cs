@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ListaDeContatos
@@ -69,12 +70,18 @@ namespace ListaDeContatos
         private static void criaLista()
         {
             Console.Clear();
-            Console.Write("[Nova Lista");
+            Console.Write("[Nova Lista]");
             Console.WriteLine("\n");
 
             var listaDeContato = new ListaDeContatos();
-            //listaDeContato.Primeiro = 0;
-            //listaDeContato.Ultimo = prim
+
+            Console.WriteLine("Será criada uma nova lista de contatos...");
+            Console.WriteLine("Escolha o tamanho desejado para essa lista: "); //o usuário que passa esse tamanho mesmo?
+            var maxTam = Int32.Parse(Console.ReadLine());
+            listaDeContato.CriaListaVazia(maxTam);
+
+            Thread.Sleep(2000);
+            Console.WriteLine("A lista de contatos foi criada, com capacidade para {0} contatos.", maxTam);
         }
         #endregion
 
