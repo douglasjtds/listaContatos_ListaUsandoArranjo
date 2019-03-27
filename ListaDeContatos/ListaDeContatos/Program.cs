@@ -23,7 +23,7 @@ namespace ListaDeContatos
                 Console.WriteLine("[ 5 ] Ver Contato");
                 Console.WriteLine("[ 6 ] Imprimir todos os Contatos");
                 Console.WriteLine("\n");
-                
+
                 Console.WriteLine("[ 0 ] Sair do Programa");
                 Console.WriteLine("-------------------------------------");
                 Console.Write("Escolha a atividade a ser executada: ");
@@ -49,7 +49,7 @@ namespace ListaDeContatos
                     case 6:
                         imprimirTodosOsContatos();
                         break;
-                    
+
                     default:
                         saiPrograma();
                         break;
@@ -72,7 +72,7 @@ namespace ListaDeContatos
             Console.Write("[Nova Lista");
             Console.WriteLine("\n");
 
-            
+            var listaDeContato = new ListaDeContatos();
         }
         #endregion
 
@@ -86,7 +86,7 @@ namespace ListaDeContatos
             Console.Write("[Novo Contato]");
             Console.WriteLine("\n");
 
-            
+
         }
         #endregion
 
@@ -100,7 +100,7 @@ namespace ListaDeContatos
             Console.Write("[Remover Contato]");
             Console.WriteLine("\n");
 
-            
+
         }
         #endregion
 
@@ -114,7 +114,7 @@ namespace ListaDeContatos
             Console.Write("[Editar Contato]");
             Console.WriteLine("\n");
 
-            
+
         }
         #endregion
 
@@ -129,8 +129,6 @@ namespace ListaDeContatos
             Console.Write("[Ver Contato]");
             Console.WriteLine("\n");
 
-            
-            
         }
         #endregion
 
@@ -144,7 +142,7 @@ namespace ListaDeContatos
             Console.Write("[Imprimir todos os Contatos]");
             Console.WriteLine("\n");
 
-            
+
         }
         #endregion
 
