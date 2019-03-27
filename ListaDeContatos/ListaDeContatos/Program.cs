@@ -73,6 +73,8 @@ namespace ListaDeContatos
             Console.WriteLine("\n");
 
             var listaDeContato = new ListaDeContatos();
+            //listaDeContato.Primeiro = 0;
+            //listaDeContato.Ultimo = prim
         }
         #endregion
 

@@ -8,7 +8,8 @@ namespace ListaDeContatos
 {
     public interface ILista
     {
-        void Pesquisa(Object chave);
+        void CriaListaVazia(int maxTam);
+        Object Pesquisa(Object chave);
         void Insere(Object x);
         Object Retira(Object chave);
         Object RetiraPrimeiro();
