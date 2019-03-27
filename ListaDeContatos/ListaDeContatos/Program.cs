@@ -95,6 +95,23 @@ namespace ListaDeContatos
             Console.Write("[Novo Contato]");
             Console.WriteLine("\n");
 
+            var listaDeContato = new ListaDeContatos();
+            var contato = new Contato();
+            listaDeContato.Insere(contato);
+
+            Console.WriteLine("Entre com os dados do novo contato a ser adicionado na lista...");
+            Thread.Sleep(1000);
+
+            contato.ID_Contato = new Guid();
+
+            Console.WriteLine("Nome: ");
+            contato.Nome = Console.ReadLine();
+
+            Console.WriteLine("Telefone: ");
+            contato.Telefone = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("Email: ");
+            contato.Email = Console.ReadLine();
 
         }
         #endregion

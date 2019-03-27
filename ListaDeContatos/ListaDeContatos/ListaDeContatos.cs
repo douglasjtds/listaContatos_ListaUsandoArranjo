@@ -11,14 +11,13 @@ namespace ListaDeContatos
         private Object[] item;
         private int primeiro, ultimo, pos;
 
-
         //cria lista vazia
         public void CriaListaVazia(int maxTam)
         {
-            this.item = new Object[maxTam];
-            this.pos = -1;
-            this.primeiro = 0;
-            this.ultimo = this.primeiro;
+            item = new Object[maxTam];
+            pos = -1;
+            primeiro = 0;
+            ultimo = this.primeiro;
         }
 
 
@@ -36,7 +35,7 @@ namespace ListaDeContatos
             return null;
         }
 
-        public void Insere(object x)
+        public void Insere(Contato contato)
         {
             try
             {
@@ -44,7 +43,7 @@ namespace ListaDeContatos
                     throw new Exception("Erro: A lista está cheia.");
                 else
                 {
-                    this.item[this.ultimo] = x;
+                    this.item[this.ultimo] = contato;
                     this.ultimo = this.ultimo + 1; //testar debugando se pode tirar o "this" e ter o mesmo resultado
                 }
             }
