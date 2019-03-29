@@ -121,7 +121,7 @@ namespace ListaDeContatos
             listaDeContato = new Lista();
 
             Console.WriteLine("Será criada uma nova lista de contatos...");
-            Console.WriteLine("Escolha o tamanho desejado para essa lista: "); //o usuário que passa esse tamanho mesmo?
+            Console.WriteLine("Escolha o tamanho desejado para essa lista: ");
             var maxTam = Int32.Parse(Console.ReadLine());
             listaDeContato.CriaListaVazia(maxTam);
 
@@ -177,7 +177,7 @@ namespace ListaDeContatos
             listaDeContato.Retira(contato);
 
             Console.WriteLine("\n");
-            Console.WriteLine("O contato {0} será removido.", contato);
+            Console.WriteLine("O contato {0} será removido.", contato.Nome);
         }
         #endregion
 
