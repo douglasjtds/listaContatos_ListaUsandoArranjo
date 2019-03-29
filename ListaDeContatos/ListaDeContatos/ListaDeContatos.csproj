@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contato.cs" />
+    <Compile Include="IListaEncadeada.cs" />
     <Compile Include="ILista.cs" />
-    <Compile Include="ListaDeContatos.cs" />
+    <Compile Include="ListaEncadeada.cs" />
+    <Compile Include="Lista.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

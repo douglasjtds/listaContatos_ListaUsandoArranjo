@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListaDeContatos
 {
-    public class ListaDeContatos : ILista
+    public class Lista : ILista
     {
         private Object[] item;
         private int primeiro, ultimo, pos;
@@ -40,13 +40,13 @@ namespace ListaDeContatos
             try
             {
                 //////////-------------------CONFERIR COMO VOU PASSAR O TAMANHO DA LISTA
-                //if (ultimo >= item.Length)
-                //    throw new Exception("Erro: A lista está cheia.");
-                //else
-                //{
+                if (ultimo >= item.Length)
+                    throw new Exception("Erro: A lista está cheia.");
+                else
+                {
                     item[ultimo] = contato;
-                    ultimo = ultimo + 1; //testar debugando se pode tirar o "this" e ter o mesmo resultado
-                //}
+                    ultimo = ultimo + 1;
+                }
             }
             catch (Exception e)
             {

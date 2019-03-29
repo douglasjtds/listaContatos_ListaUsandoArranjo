@@ -9,12 +9,51 @@ namespace ListaDeContatos
 {
     public class Program
     {
+        private static Lista listaDeContato;
+
         static void Main(string[] args)
+        {
+            #region [Escolha do tipo de lista a ser utilizada]
+            int tipoDeLista;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("------[Trabalho de AEDs]------");
+                Console.WriteLine("\n");
+                Console.WriteLine("[ 1 ] Lista Comum");
+                Console.WriteLine("[ 2 ] Lista Encadeada (com auto-referenciamento)");
+
+                Console.WriteLine("\n");
+
+                Console.WriteLine("[ 0 ] Sair do Programa");
+                Console.WriteLine("-------------------------------------");
+                Console.Write("Escolha o tipo de lista que deseja utilizar: ");
+                tipoDeLista = Int32.Parse(Console.ReadLine());
+                switch (tipoDeLista)
+                {
+                    case 1:
+                        escolheuListaComum();
+                        break;
+                    case 2:
+                        escolheuListaEncadeada();
+                        break;
+                    default:
+                        saiPrograma();
+                        break;
+                }
+
+            } while (tipoDeLista != 0); 
+            #endregion
+        }
+
+        public static void escolheuListaComum()
         {
             #region [Estrutura de repetição para escolha da atividade a ser executada.]
             int opcao;
             do
             {
+                Console.Clear();
                 Console.WriteLine("------[Lista de Contatos]------");
                 Console.WriteLine("\n");
                 Console.WriteLine("[ 1 ] Nova Lista");
@@ -22,7 +61,7 @@ namespace ListaDeContatos
                 Console.WriteLine("[ 3 ] Remover Contato");
                 Console.WriteLine("[ 4 ] Editar Contato");
                 Console.WriteLine("[ 5 ] Ver Contato");
-                Console.WriteLine("[ 6 ] Imprimir todos os Contatos");
+                Console.WriteLine("[ 6 ] Ver Lista (Imprime todos os Contatos)");
                 Console.WriteLine("\n");
 
                 Console.WriteLine("[ 0 ] Sair do Programa");
@@ -62,6 +101,12 @@ namespace ListaDeContatos
             #endregion
         }
 
+        public static void escolheuListaEncadeada()
+        {
+            //implementar chamadas para lista encadeada
+            Console.WriteLine("Ainda não implementada.");
+        }
+
 
         #region [Criar lista]
         /// <summary>
@@ -73,14 +118,14 @@ namespace ListaDeContatos
             Console.Write("[Nova Lista]");
             Console.WriteLine("\n");
 
-            var listaDeContato = new ListaDeContatos();
+            listaDeContato = new Lista();
 
             Console.WriteLine("Será criada uma nova lista de contatos...");
             Console.WriteLine("Escolha o tamanho desejado para essa lista: "); //o usuário que passa esse tamanho mesmo?
             var maxTam = Int32.Parse(Console.ReadLine());
             listaDeContato.CriaListaVazia(maxTam);
 
-            Thread.Sleep(2000);
+            Thread.Sleep(500);
             Console.WriteLine("A lista de contatos foi criada, com capacidade para {0} contatos.", maxTam);
         }
         #endregion
@@ -95,7 +140,6 @@ namespace ListaDeContatos
             Console.Write("[Novo Contato]");
             Console.WriteLine("\n");
 
-            var listaDeContato = new ListaDeContatos();
             var contato = new Contato();
 
             Console.WriteLine("Entre com os dados do novo contato a ser adicionado na lista...");
@@ -113,9 +157,6 @@ namespace ListaDeContatos
             contato.ID_Contato = Guid.NewGuid();
 
             listaDeContato.Insere(contato);
-
-            //pra testar
-            listaDeContato.IsListaVazia();
         }
         #endregion
 
@@ -129,12 +170,14 @@ namespace ListaDeContatos
             Console.Write("[Remover Contato]");
             Console.WriteLine("\n");
 
-            var listaDeContato = new ListaDeContatos();
             var contato = new Contato();
 
             Console.WriteLine("Entre com o nome do contato que deseja remover da lista: ");
             contato.Nome = Console.ReadLine();
             listaDeContato.Retira(contato);
+
+            Console.WriteLine("\n");
+            Console.WriteLine("O contato {0} será removido.", contato);
         }
         #endregion
 
@@ -163,7 +206,7 @@ namespace ListaDeContatos
             Console.Write("[Ver Contato]");
             Console.WriteLine("\n");
 
-            var listaDeContato = new ListaDeContatos();
+            var listaDeContato = new Lista();
             var contato = new Contato();
 
             Console.WriteLine("Entre com o nome do contato que deseja pesquisar: ");
