@@ -97,12 +97,9 @@ namespace ListaDeContatos
 
             var listaDeContato = new ListaDeContatos();
             var contato = new Contato();
-            listaDeContato.Insere(contato);
 
             Console.WriteLine("Entre com os dados do novo contato a ser adicionado na lista...");
             Thread.Sleep(1000);
-
-            contato.ID_Contato = new Guid();
 
             Console.WriteLine("Nome: ");
             contato.Nome = Console.ReadLine();
@@ -113,6 +110,12 @@ namespace ListaDeContatos
             Console.WriteLine("Email: ");
             contato.Email = Console.ReadLine();
 
+            contato.ID_Contato = Guid.NewGuid();
+
+            listaDeContato.Insere(contato);
+
+            //pra testar
+            listaDeContato.IsListaVazia();
         }
         #endregion
 
@@ -126,7 +129,12 @@ namespace ListaDeContatos
             Console.Write("[Remover Contato]");
             Console.WriteLine("\n");
 
+            var listaDeContato = new ListaDeContatos();
+            var contato = new Contato();
 
+            Console.WriteLine("Entre com o nome do contato que deseja remover da lista: ");
+            contato.Nome = Console.ReadLine();
+            listaDeContato.Retira(contato);
         }
         #endregion
 
@@ -155,6 +163,19 @@ namespace ListaDeContatos
             Console.Write("[Ver Contato]");
             Console.WriteLine("\n");
 
+            var listaDeContato = new ListaDeContatos();
+            var contato = new Contato();
+
+            Console.WriteLine("Entre com o nome do contato que deseja pesquisar: ");
+            contato.Nome = Console.ReadLine();
+
+            listaDeContato.Pesquisa(contato.Nome);
+
+            Thread.Sleep(2000);
+
+            Console.WriteLine("Nome: {0}", contato.Nome);
+            Console.WriteLine("Telefone: {0}", contato.Telefone);
+            Console.WriteLine("Email: {0}", contato.Email);
         }
         #endregion
 
@@ -168,7 +189,8 @@ namespace ListaDeContatos
             Console.Write("[Imprimir todos os Contatos]");
             Console.WriteLine("\n");
 
-
+            Console.WriteLine("Lista de contatos: ");
+            Console.WriteLine("\n");
         }
         #endregion
 
