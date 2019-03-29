@@ -108,6 +108,7 @@ namespace ListaDeContatos
         }
 
 
+        #region ------Lista Comum------
         #region [Criar lista]
         /// <summary>
         /// Atividade 1: 
@@ -235,6 +236,10 @@ namespace ListaDeContatos
             Console.WriteLine("Lista de contatos: ");
             Console.WriteLine("\n");
         }
+        #endregion
+        #endregion
+
+        #region ------Lista Encadeada------
         #endregion
 
         #region para fechar o programa
