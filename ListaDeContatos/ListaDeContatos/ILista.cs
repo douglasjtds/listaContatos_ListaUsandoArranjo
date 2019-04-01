@@ -10,7 +10,7 @@ namespace ListaDeContatos
     {
         void CriaListaVazia(int maxTam);
         Object Pesquisa(Object chave);
-        void Insere(Contato contato);
+        void Insere(Object chave);
         Object Retira(Object chave);
         Object RetiraPrimeiro();
         Object Primeiro();

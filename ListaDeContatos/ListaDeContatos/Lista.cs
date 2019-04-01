@@ -35,7 +35,7 @@ namespace ListaDeContatos
             return null;
         }
 
-        public void Insere(Contato contato)
+        public void Insere(Object chave)
         {
             try
             {
@@ -44,13 +44,13 @@ namespace ListaDeContatos
                     throw new Exception("Erro: A lista está cheia.");
                 else
                 {
-                    item[ultimo] = contato;
+                    item[ultimo] = chave;
                     ultimo = ultimo + 1;
                 }
             }
             catch (Exception e)
             {
-                throw e;
+                Console.WriteLine(e);
             }
         }
 
