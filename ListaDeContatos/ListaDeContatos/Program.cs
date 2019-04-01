@@ -10,6 +10,7 @@ namespace ListaDeContatos
     public class Program
     {
         private static Lista listaDeContato;
+        //private static Contato contato;
 
         static void Main(string[] args)
         {
@@ -99,6 +100,12 @@ namespace ListaDeContatos
             }
             while (opcao != 0);
             #endregion
+        }
+
+        public Program()
+        {
+            listaDeContato = new Lista();
+            //contato = new Contato();    //PRECISA DESSE CONSTRUTOR?
         }
 
         public static void escolheuListaEncadeada()
