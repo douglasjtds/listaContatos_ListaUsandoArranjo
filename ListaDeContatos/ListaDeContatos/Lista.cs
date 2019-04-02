@@ -8,7 +8,7 @@ namespace ListaDeContatos
 {
     public class Lista : ILista
     {
-        private Object[] item;
+        public Object[] item;
         private int primeiro, ultimo, pos;
 
         //cria lista vazia
@@ -64,7 +64,7 @@ namespace ListaDeContatos
                 p++;
 
             if (p >= ultimo)
-                return null; //chave passada não foi encontrada
+                return null;
 
             Object item = this.item[p];
             ultimo = ultimo - 1;

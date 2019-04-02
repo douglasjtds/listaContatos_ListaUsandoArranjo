@@ -153,18 +153,20 @@ namespace ListaDeContatos
             Console.WriteLine("Entre com os dados do novo contato a ser adicionado na lista...");
             Thread.Sleep(1000);
 
-            Console.WriteLine("Nome: ");
+            Console.Write("Nome: ");
             contato.Nome = Console.ReadLine();
 
-            Console.WriteLine("Telefone: ");
+            Console.Write("Telefone: ");
             contato.Telefone = Int32.Parse(Console.ReadLine());
 
-            Console.WriteLine("Email: ");
+            Console.Write("Email: ");
             contato.Email = Console.ReadLine();
 
             contato.ID_Contato = Guid.NewGuid();
 
             listaDeContato.Insere(contato);
+
+            Console.WriteLine("O contato {0} foi inserido com sucesso.", contato.Nome);
         }
         #endregion
 
@@ -178,14 +180,17 @@ namespace ListaDeContatos
             Console.Write("[Remover Contato]");
             Console.WriteLine("\n");
 
-            var contato = new Contato();
+            //var contato = new Contato();
+            string nomeDoContato;
 
-            Console.WriteLine("Entre com o nome do contato que deseja remover da lista: ");
-            contato.Nome = Console.ReadLine();
-            listaDeContato.Retira(contato);
+            Console.Write("Entre com o nome do contato que deseja remover da lista: ");
+            //contato.Nome = Console.ReadLine();
+            nomeDoContato = Console.ReadLine();
+            //listaDeContato.Retira(contato);
+            listaDeContato.Retira(nomeDoContato);
 
             Console.WriteLine("\n");
-            Console.WriteLine("O contato {0} será removido.", contato.Nome);
+            Console.WriteLine("O contato {0} será removido.", listaDeContato.item);
         }
         #endregion
 
@@ -203,7 +208,6 @@ namespace ListaDeContatos
         }
         #endregion
 
-
         #region [Ver Contato]
         /// <summary>
         /// Atividade 5: 
@@ -217,7 +221,7 @@ namespace ListaDeContatos
             var listaDeContato = new Lista();
             var contato = new Contato();
 
-            Console.WriteLine("Entre com o nome do contato que deseja pesquisar: ");
+            Console.Write("Entre com o nome do contato que deseja pesquisar: ");
             contato.Nome = Console.ReadLine();
 
             listaDeContato.Pesquisa(contato.Nome);
