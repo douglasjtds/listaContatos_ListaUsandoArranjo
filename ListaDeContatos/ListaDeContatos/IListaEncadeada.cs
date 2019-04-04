@@ -8,7 +8,7 @@ namespace ListaDeContatos
 {
     public interface IListaEncadeada //utilizando auto-referenciamento (exemplo Aula 4)
     {
-        void Pesquisa(Object chave);
+        Object Pesquisa(Object chave);
         void Insere(Object x);
         Object Retira(Object chave);
         Object RetiraPrimeiro();

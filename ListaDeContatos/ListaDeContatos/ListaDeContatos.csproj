@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Celula.cs" />
     <Compile Include="Contato.cs" />
     <Compile Include="IListaEncadeada.cs" />
     <Compile Include="ILista.cs" />
