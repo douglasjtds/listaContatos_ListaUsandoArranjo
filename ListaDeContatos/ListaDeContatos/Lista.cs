@@ -93,7 +93,7 @@ namespace ListaDeContatos
         public object Primeiro()
         {
             pos = -1;
-            return Proximo();
+            return Proximo(); 
         }
 
         public bool IsListaVazia()
@@ -123,32 +123,54 @@ namespace ListaDeContatos
         #region [Atividade 3]
         public object RetiraUltimo()
         {
-            throw new NotImplementedException();
+            if (IsListaVazia())
+                throw new Exception("Erro: Lista Vazia.");
+            ultimo--;
+            return null;
         }
 
-        public object Ultimo()
+        public int Ultimo()
         {
-            throw new NotImplementedException();
+            return ultimo;
         }
 
-        public object TamanhoLista()
+        public int TamanhoLista()
         {
-            throw new NotImplementedException();
+            return item.Length;
         }
 
-        public object Insere(Object x, Object chave)
+        public void Insere(Object x, Object chave)
         {
-            throw new NotImplementedException();
+            //Object objetoAux = null;
+            if(ultimo >= item.Length)
+                Console.WriteLine("Lista cheia!");
+            else
+            {
+                for (int chaveAux = ultimo; chaveAux > Convert.ToInt32(chave); chaveAux--)
+                    item[chaveAux] = item[chaveAux - 1];
+
+                item[Convert.ToInt32(chave)] = x;
+                ultimo = ultimo + 1;
+            }
         }
 
-        public object Concatenar(Object[] itens)
+        public object Concatenar(Object[] objA, Object[] objB)
         {
-            throw new NotImplementedException();
+            Object[] objConcat = new Object[objA.Length + objB.Length];
+
+            for (int i = 0; i < objA.Length; i++)
+                objConcat[i] = objA[i];
+            for (int j = objA.Length; j < objConcat.Length; j++)
+                objConcat[j] = objB[j];
+
+            return objConcat;
         }
 
-        public object Copia(Object item)
+        public void Copia(Object [] obj) //CONFERIR COMO SERIA ESSA COPIA
         {
-            throw new NotImplementedException();
+            Object[] objCopiado = new Object[item.Length];
+            for (int i = 0; i > obj.Length; i++)
+                objCopiado[i] = obj; 
         } 
         #endregion
         #endregion

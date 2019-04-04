@@ -114,6 +114,10 @@ namespace ListaDeContatos
             Console.WriteLine("Ainda não implementada.");
         }
 
+        //public static void escolheuPilhaComArranjo()
+        //{
+        //    Console.WriteLine("Ainda não implementada.");
+        //}
 
         #region ------Lista Comum------
         #region [Criar lista]
