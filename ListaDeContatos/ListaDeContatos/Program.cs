@@ -240,6 +240,7 @@ namespace ListaDeContatos
             //contato.Nome = Console.ReadLine();
             nomeDoContato = Console.ReadLine();
             //listaDeContato.Retira(contato);
+
             listaDeContato.Retira(nomeDoContato);
 
             Console.WriteLine("\n");

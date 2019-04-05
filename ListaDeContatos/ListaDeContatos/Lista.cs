@@ -45,7 +45,7 @@ namespace ListaDeContatos
                 else
                 {
                     item[ultimo] = chave;
-                    ultimo = ultimo + 1;
+                    ultimo++;
                 }
             }
             catch (Exception e)
@@ -59,15 +59,17 @@ namespace ListaDeContatos
             if (IsListaVazia() || chave == null)
                 throw new Exception("Erro : A lista esta vazia");
 
+            //Contato contato = (Contato)chave;
+
             int p = 0;
-            while (p < ultimo && !this.item[p].Equals(chave))
+            while (p < ultimo && !((Contato)(this.item[p])).Nome.Equals(chave))
                 p++;
 
             if (p >= ultimo)
                 return null;
 
             Object item = this.item[p];
-            ultimo = ultimo - 1;
+            ultimo--;
 
             for (int aux = p; aux < ultimo; aux++)
                 this.item[aux] = this.item[aux + 1];

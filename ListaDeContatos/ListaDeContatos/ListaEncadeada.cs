@@ -11,11 +11,11 @@ namespace ListaDeContatos
         //cria lista vazia
         public void CriaListaVazia()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             //var celula = new Celula();
             //celula.primeiro = null;
-            //celula.pos = 
-            //this.primeiro = new Celula(); 
+            //celula.pos =
+            //this.primeiro = new Celula();
             //this.pos = this.primeiro;
             //this.ultimo = this.primeiro; this.primeiro.prox = null;
         }
