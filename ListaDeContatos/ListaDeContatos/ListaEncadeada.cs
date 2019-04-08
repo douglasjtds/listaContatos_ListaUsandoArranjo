@@ -101,5 +101,16 @@ namespace ListaDeContatos
                 aux = aux.prox;
             }
         }
+
+        #region Aula Prática 4 - [Atividade 2]
+        /// <summary>
+        /// Atividade 2: Escreva uma função para trocar os elementos m e n de uma lista auto-referenciada 
+        /// (onde m e n devem ser chaves dos itens a serem trocados na lista)
+        /// </summary>
+        public void TrocaElementosM_N_Encadeada()
+        {
+
+        }
+        #endregion
     }
 }

@@ -171,8 +171,20 @@ namespace ListaDeContatos
             Object[] objCopiado = new Object[item.Length];
             for (int i = 0; i > obj.Length; i++)
                 objCopiado[i] = obj; 
-        } 
+        }
         #endregion
+
+        #region Aula Prática 4 - [Atividade 1]
+        /// <summary>
+        /// Atividade 1: Escreva uma função para trocar os elementos m e n de uma lista por arranjo 
+        /// (onde m e n devem ser chaves dos itens a serem trocados na lista)
+        /// </summary>
+        public void TrocaElementosM_N()
+        {
+
+        }
+        #endregion
+
         #endregion
     }
 }
