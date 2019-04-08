@@ -106,7 +106,7 @@ namespace ListaDeContatos
         public Program()
         {
             listaDeContato = new Lista();
-            //contato = new Contato();    //PRECISA DESSE CONSTRUTOR?
+            //contato = new Contato();
         }
 
         public static void escolheuListaEncadeada()
@@ -272,15 +272,18 @@ namespace ListaDeContatos
             Console.Write("[Ver Contato]");
             Console.WriteLine("\n");
 
-            var listaDeContato = new Lista();
+            //var listaDeContato = new Lista();
+            string nomeDoContato;
             var contato = new Contato();
 
             Console.Write("Entre com o nome do contato que deseja pesquisar: ");
-            contato.Nome = Console.ReadLine();
+            nomeDoContato = Console.ReadLine();
 
-            listaDeContato.Pesquisa(contato.Nome);
+            listaDeContato.Pesquisa(nomeDoContato);
 
             Thread.Sleep(2000);
+
+            Console.WriteLine("\n");
 
             Console.WriteLine("Nome: {0}", contato.Nome);
             Console.WriteLine("Telefone: {0}", contato.Telefone);
@@ -300,35 +303,38 @@ namespace ListaDeContatos
 
             Console.WriteLine("Lista de contatos: ");
             Console.WriteLine("\n");
+
+            while (!listaDeContato.IsListaVazia())
+                listaDeContato.Imprime();
         }
         #endregion
         #endregion
 
         #region ------Lista Encadeada------
 
-        #region [Criar lista]
+        #region [Criar lista Encadeada]
         /// <summary>
         /// Atividade 1: 
         /// </summary>
         private static void criaLista_Encadeada()
         {
             Console.Clear();
-            Console.Write("[Nova Lista]");
+            Console.Write("[Nova Lista Encadeada]");
             Console.WriteLine("\n");
 
             listaDeContatosEncadeada = new ListaEncadeada();
 
-            Console.WriteLine("Será criada uma nova lista de contatos...");
-            Console.WriteLine("Escolha o tamanho desejado para essa lista: ");
-            var maxTam = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Será criada uma nova lista encadeada de contatos...");
+            //Console.WriteLine("Escolha o tamanho desejado para essa lista: ");
+            //var maxTam = Int32.Parse(Console.ReadLine());
             listaDeContatosEncadeada.CriaListaVazia();
 
             Thread.Sleep(500);
-            Console.WriteLine("A lista de contatos foi criada, com capacidade para {0} contatos.", maxTam);
+            Console.WriteLine("A lista encadeada de contatos foi criada.");
         }
         #endregion
 
-        #region [Novo Contato]
+        #region [Novo Contato Encadeada]
         /// <summary>
         /// Atividade 2: 
         /// </summary>
@@ -356,11 +362,12 @@ namespace ListaDeContatos
 
             listaDeContatosEncadeada.Insere(contato);
 
+            Console.WriteLine("\n");
             Console.WriteLine("O contato {0} foi inserido com sucesso.", contato.Nome);
         }
         #endregion
 
-        #region [Remover Contato]
+        #region [Remover Contato Encadeada]
         /// <summary>
         /// Atividade 3: 
         /// </summary>
@@ -384,7 +391,7 @@ namespace ListaDeContatos
         }
         #endregion
 
-        #region [Editar Contato]
+        #region [Editar Contato Encadeada]
         /// <summary>
         /// Atividade 4: 
         /// </summary>
@@ -398,7 +405,7 @@ namespace ListaDeContatos
         }
         #endregion
 
-        #region [Ver Contato]
+        #region [Ver Contato Encadeada]
         /// <summary>
         /// Atividade 5: 
         /// </summary>
@@ -408,13 +415,14 @@ namespace ListaDeContatos
             Console.Write("[Ver Contato]");
             Console.WriteLine("\n");
 
-            var listaDeContato = new Lista();
+            //var listaDeContatoEncadeada = new Lista();
             var contato = new Contato();
+            string nomeContato;
 
             Console.Write("Entre com o nome do contato que deseja pesquisar: ");
-            contato.Nome = Console.ReadLine();
+            nomeContato = Console.ReadLine();
 
-            listaDeContatosEncadeada.Pesquisa(contato.Nome);
+            listaDeContatosEncadeada.Pesquisa(nomeContato);
 
             Thread.Sleep(2000);
 
@@ -424,7 +432,7 @@ namespace ListaDeContatos
         }
         #endregion
 
-        #region [Imprimir todos os Contatos]
+        #region [Imprimir todos os Contatos Encadeada]
         /// <summary>
         /// Atividade 6: 
         /// </summary>
@@ -436,6 +444,9 @@ namespace ListaDeContatos
 
             Console.WriteLine("Lista de contatos: ");
             Console.WriteLine("\n");
+
+            while (!listaDeContatosEncadeada.IsListaVazia())
+                listaDeContatosEncadeada.Imprime();
         }
         #endregion
 
