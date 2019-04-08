@@ -105,7 +105,6 @@ namespace ListaDeContatos
         #endregion
 
         #region Outros métodos que não estão na interface
-        //completando com outros métodos
         public object Proximo()
         {
             pos++;

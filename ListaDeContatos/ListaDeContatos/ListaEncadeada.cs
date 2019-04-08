@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListaDeContatos
 {
-    public class ListaEncadeada //: IListaEncadeada  //utilizando auto-referenciamento (exemplo Aula 4)
+    public class ListaEncadeada : IListaEncadeada  //utilizando auto-referenciamento (exemplo Aula 4)
     {
         public class Celula
         {
