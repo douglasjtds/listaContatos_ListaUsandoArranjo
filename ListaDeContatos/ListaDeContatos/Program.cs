@@ -103,12 +103,6 @@ namespace ListaDeContatos
             #endregion
         }
 
-        public Program()
-        {
-            listaDeContato = new Lista();
-            //contato = new Contato();
-        }
-
         public static void escolheuListaEncadeada()
         {
             #region [Estrutura de repetição para escolha da atividade a ser executada.]

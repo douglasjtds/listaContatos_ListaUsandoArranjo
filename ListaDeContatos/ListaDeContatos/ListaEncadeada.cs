@@ -17,10 +17,8 @@ namespace ListaDeContatos
         }
         public Celula primeiro, ultimo, pos;
 
-        //cria lista vazia
         public void CriaListaVazia()
         {
-            //throw new NotImplementedException();
             var celula = new Celula();
             celula.primeiro = null;
             celula.pos =
@@ -47,7 +45,6 @@ namespace ListaDeContatos
 
         public void Insere(object x)
         {
-            //throw new NotImplementedException();
             this.ultimo.prox = new Celula();
             this.ultimo = this.ultimo.prox;
             this.ultimo.item = x; this.ultimo.prox = null;
@@ -55,7 +52,6 @@ namespace ListaDeContatos
 
         public object Retira(object chave)
         {
-            //throw new NotImplementedException();
             if (IsListaVazia() || (chave == null))
                 throw new Exception
                 ("Erro : Lista vazia ou chave invalida");
@@ -70,7 +66,6 @@ namespace ListaDeContatos
 
         public object RetiraPrimeiro()
         {
-            //throw new NotImplementedException();
             if (IsListaVazia())
                 throw new Exception("Erro : Lista vazia");
             Celula aux = primeiro; Celula q = aux.prox;
@@ -80,14 +75,12 @@ namespace ListaDeContatos
         }
         public object Primeiro()
         {
-            //throw new NotImplementedException();
             pos = primeiro;
             return Proximo();
         }
 
         public bool IsListaVazia()
         {
-            //throw new NotImplementedException();
             return (primeiro == ultimo);
         }
         #endregion

@@ -11,7 +11,6 @@ namespace ListaDeContatos
         public Object[] item;
         private int primeiro, ultimo, pos;
 
-        //cria lista vazia
         public void CriaListaVazia(int maxTam)
         {
             item = new Object[maxTam];
