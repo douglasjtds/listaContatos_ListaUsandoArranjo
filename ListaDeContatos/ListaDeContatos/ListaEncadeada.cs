@@ -19,12 +19,10 @@ namespace ListaDeContatos
 
         public void CriaListaVazia()
         {
-            var celula = new Celula();
-            celula.primeiro = null;
-            celula.pos =
             primeiro = new Celula();
             pos = primeiro;
-            ultimo = primeiro; primeiro.prox = null;
+            ultimo = primeiro;
+            primeiro.prox = null;
         }
 
         #region Métodos herdados da interface

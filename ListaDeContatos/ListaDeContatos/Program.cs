@@ -11,6 +11,8 @@ namespace ListaDeContatos
     {
         private static Lista listaDeContato;
         private static ListaEncadeada listaDeContatosEncadeada;
+        private static Pilha pilhaDeContatos;
+        private static PilhaEncadeada pilhaDeContatosEncadeada;
         //private static Contato contato;
 
         static void Main(string[] args)
@@ -32,7 +34,7 @@ namespace ListaDeContatos
 
                 Console.WriteLine("[ 0 ] Sair do Programa");
                 Console.WriteLine("-------------------------------------");
-                Console.Write("Escolha o tipo de lista que deseja utilizar: ");
+                Console.Write("Escolha o Tipo Abstrato de Dados que deseja utilizar: ");
                 tipoDeLista = Int32.Parse(Console.ReadLine());
                 switch (tipoDeLista)
                 {
@@ -59,7 +61,7 @@ namespace ListaDeContatos
 
         public static void EscolheuListaComum()
         {
-            #region [Estrutura de repetição para escolha da atividade a ser executada.]
+            #region [Lista Comum - Estrutura de repetição para escolha da atividade a ser executada.]
             int opcao;
             do
             {
@@ -74,7 +76,7 @@ namespace ListaDeContatos
                 Console.WriteLine("[ 6 ] Ver Lista (Imprime todos os Contatos)");
                 Console.WriteLine("\n");
 
-                Console.WriteLine("[ 0 ] Sair do Programa");
+                Console.WriteLine("[ 0 ] Voltar para o menu anterior.");
                 Console.WriteLine("-------------------------------------");
                 Console.Write("Escolha a atividade a ser executada: ");
 
@@ -82,22 +84,22 @@ namespace ListaDeContatos
                 switch (opcao)
                 {
                     case 1:
-                        criaLista();
+                        CriaLista();
                         break;
                     case 2:
-                        novoContato();
+                        NovoContato();
                         break;
                     case 3:
-                        removerContato();
+                        RemoverContato();
                         break;
                     case 4:
-                        editarContato();
+                        EditarContato();
                         break;
                     case 5:
-                        verContato();
+                        VerContato();
                         break;
                     case 6:
-                        imprimirTodosOsContatos();
+                        ImprimirTodosOsContatos();
                         break;
 
                     default:
@@ -113,7 +115,7 @@ namespace ListaDeContatos
 
         public static void EscolheuListaEncadeada()
         {
-            #region [Estrutura de repetição para escolha da atividade a ser executada.]
+            #region [Lista Encadeada - Estrutura de repetição para escolha da atividade a ser executada.]
             int opcao;
             do
             {
@@ -128,7 +130,7 @@ namespace ListaDeContatos
                 Console.WriteLine("[ 6 ] Ver Lista Encadeada (Imprime todos os Contatos)");
                 Console.WriteLine("\n");
 
-                Console.WriteLine("[ 0 ] Sair do Programa");
+                Console.WriteLine("[ 0 ] Voltar para o menu anterior.");
                 Console.WriteLine("-------------------------------------");
                 Console.Write("Escolha a atividade a ser executada: ");
 
@@ -136,22 +138,22 @@ namespace ListaDeContatos
                 switch (opcao)
                 {
                     case 1:
-                        criaLista_Encadeada();
+                        CriaLista_Encadeada();
                         break;
                     case 2:
-                        novoContato_Encadeada();
+                        NovoContato_Encadeada();
                         break;
                     case 3:
-                        removerContato_Encadeada();
+                        RemoverContato_Encadeada();
                         break;
                     case 4:
-                        editarContato_Encadeada();
+                        EditarContato_Encadeada();
                         break;
                     case 5:
-                        verContato_Encadeada();
+                        VerContato_Encadeada();
                         break;
                     case 6:
-                        imprimirTodosOsContatos_Encadeada();
+                        ImprimirTodosOsContatos_Encadeada();
                         break;
 
                     default:
@@ -167,7 +169,7 @@ namespace ListaDeContatos
 
         public static void EscolheuPilhaComArranjo()
         {
-            #region [Estrutura de repetição para escolha da atividade a ser executada.]
+            #region [Pilha Comum - Estrutura de repetição para escolha da atividade a ser executada.]
             int opcao;
             do
             {
@@ -175,14 +177,14 @@ namespace ListaDeContatos
                 Console.WriteLine("------[Pilha de Contatos]------");
                 Console.WriteLine("\n");
                 Console.WriteLine("[ 1 ] Nova Pilha");
-                Console.WriteLine("[ 2 ] Novo Contato");
-                Console.WriteLine("[ 3 ] Remover Contato");
-                Console.WriteLine("[ 4 ] Editar Contato");
-                Console.WriteLine("[ 5 ] Ver Contato");
-                Console.WriteLine("[ 6 ] Ver Pilha (Imprime todos os Contatos)");
+                Console.WriteLine("[ 2 ] Empilhar - Novo Contato");
+                Console.WriteLine("[ 3 ] Desempilhar Contato");
+                //Console.WriteLine("[ 4 ] Editar Contato");
+                //Console.WriteLine("[ 5 ] Ver Contato");
+                //Console.WriteLine("[ 6 ] Ver Pilha (Imprime todos os Contatos)");
                 Console.WriteLine("\n");
 
-                Console.WriteLine("[ 0 ] Sair do Programa");
+                Console.WriteLine("[ 0 ] Voltar para o menu anterior.");
                 Console.WriteLine("-------------------------------------");
                 Console.Write("Escolha a atividade a ser executada: ");
 
@@ -190,23 +192,23 @@ namespace ListaDeContatos
                 switch (opcao)
                 {
                     case 1:
-                        criaPilha();
+                        CriaPilha();
                         break;
                     case 2:
-                        novoContato_Pilha();
+                        NovoContato_Pilha();
                         break;
                     case 3:
-                        removerContato_Pilha();
+                        RemoverContato_Pilha();
                         break;
-                    case 4:
-                        editarContato_Pilha();
-                        break;
-                    case 5:
-                        verContato_Pilha();
-                        break;
-                    case 6:
-                        imprimirTodosOsContatos_Pilha();
-                        break;
+                    //case 4:
+                    //    //EditarContato_Pilha();
+                    //    break;
+                    //case 5:
+                    //    //VerContato_Pilha();
+                    //    break;
+                    //case 6:
+                    //    //ImprimirTodosOsContatos_Pilha();
+                    //    break;
 
                     default:
                         SaiPrograma();
@@ -221,7 +223,56 @@ namespace ListaDeContatos
 
         public static void EscolheuPilhaEncadeada()
         {
-            Console.WriteLine("Ainda não implementada.");
+            #region [Pilha Encadeada - Estrutura de repetição para escolha da atividade a ser executada.]
+            int opcao;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("------[Pilha Encadeada de Contatos]------");
+                Console.WriteLine("\n");
+                Console.WriteLine("[ 1 ] Nova Pilha Encadeada");
+                Console.WriteLine("[ 2 ] Empilhar - Novo Contato");
+                Console.WriteLine("[ 3 ] Desempilhar Contato");
+                //Console.WriteLine("[ 4 ] Editar Contato");
+                //Console.WriteLine("[ 5 ] Ver Contato");
+                //Console.WriteLine("[ 6 ] Ver Pilha Encadeada (Imprime todos os Contatos)");
+                Console.WriteLine("\n");
+
+                Console.WriteLine("[ 0 ] Voltar para o menu anterior.");
+                Console.WriteLine("-------------------------------------");
+                Console.Write("Escolha a atividade a ser executada: ");
+
+                opcao = Int32.Parse(Console.ReadLine());
+                switch (opcao)
+                {
+                    case 1:
+                        CriaPilha_Encadeada();
+                        break;
+                    case 2:
+                        NovoContato_Pilha_Encadeada();
+                        break;
+                    case 3:
+                        RemoverContato_Pilha_Encadeada();
+                        break;
+                    //case 4:
+                    //    //EditarContato_Pilha_Encadeada();
+                    //    break;
+                    //case 5:
+                    //    //VerContato_Pilha_Encadeada();
+                    //    break;
+                    //case 6:
+                    //    //ImprimirTodosOsContatos_Pilha_Encadeada();
+                    //    break;
+
+                    default:
+                        SaiPrograma();
+                        break;
+                }
+                Console.ReadKey();
+                Console.Clear();
+            }
+            while (opcao != 0);
+            #endregion
         }
 
         #region ------Lista Comum------
@@ -229,7 +280,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 1: 
         /// </summary>
-        private static void criaLista()
+        private static void CriaLista()
         {
             Console.Clear();
             Console.Write("[Nova Lista]");
@@ -238,7 +289,7 @@ namespace ListaDeContatos
             listaDeContato = new Lista();
 
             Console.WriteLine("Será criada uma nova lista de contatos...");
-            Console.WriteLine("Escolha o tamanho desejado para essa lista: ");
+            Console.Write("Escolha o tamanho desejado para essa lista: ");
             var maxTam = Int32.Parse(Console.ReadLine());
             listaDeContato.CriaListaVazia(maxTam);
 
@@ -251,7 +302,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 2: 
         /// </summary>
-        private static void novoContato()
+        private static void NovoContato()
         {
             Console.Clear();
             Console.Write("[Novo Contato]");
@@ -283,7 +334,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 3: 
         /// </summary>
-        private static void removerContato()
+        private static void RemoverContato()
         {
             Console.Clear();
             Console.Write("[Remover Contato]");
@@ -308,7 +359,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 4: 
         /// </summary>
-        public static void editarContato()
+        public static void EditarContato()
         {
             Console.Clear();
             Console.Write("[Editar Contato]");
@@ -322,7 +373,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 5: 
         /// </summary>
-        public static void verContato()
+        public static void VerContato()
         {
             Console.Clear();
             Console.Write("[Ver Contato]");
@@ -351,7 +402,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 6: 
         /// </summary>
-        public static void imprimirTodosOsContatos()
+        public static void ImprimirTodosOsContatos()
         {
             Console.Clear();
             Console.Write("[Imprimir todos os Contatos]");
@@ -372,7 +423,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 1: 
         /// </summary>
-        private static void criaLista_Encadeada()
+        private static void CriaLista_Encadeada()
         {
             Console.Clear();
             Console.Write("[Nova Lista Encadeada]");
@@ -381,7 +432,7 @@ namespace ListaDeContatos
             listaDeContatosEncadeada = new ListaEncadeada();
 
             Console.WriteLine("Será criada uma nova lista encadeada de contatos...");
-            //Console.WriteLine("Escolha o tamanho desejado para essa lista: ");
+            //Console.Write("Escolha o tamanho desejado para essa lista: ");
             //var maxTam = Int32.Parse(Console.ReadLine());
             listaDeContatosEncadeada.CriaListaVazia();
 
@@ -394,7 +445,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 2: 
         /// </summary>
-        private static void novoContato_Encadeada()
+        private static void NovoContato_Encadeada()
         {
             Console.Clear();
             Console.Write("[Novo Contato]");
@@ -427,7 +478,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 3: 
         /// </summary>
-        private static void removerContato_Encadeada()
+        private static void RemoverContato_Encadeada()
         {
             Console.Clear();
             Console.Write("[Remover Contato]");
@@ -451,7 +502,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 4: 
         /// </summary>
-        public static void editarContato_Encadeada()
+        public static void EditarContato_Encadeada()
         {
             Console.Clear();
             Console.Write("[Editar Contato]");
@@ -465,7 +516,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 5: 
         /// </summary>
-        public static void verContato_Encadeada()
+        public static void VerContato_Encadeada()
         {
             Console.Clear();
             Console.Write("[Ver Contato]");
@@ -492,7 +543,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 6: 
         /// </summary>
-        public static void imprimirTodosOsContatos_Encadeada()
+        public static void ImprimirTodosOsContatos_Encadeada()
         {
             Console.Clear();
             Console.Write("[Imprimir todos os Contatos]");
@@ -513,21 +564,21 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 1: 
         /// </summary>
-        private static void criaPilha()
+        private static void CriaPilha()
         {
             Console.Clear();
-            Console.Write("[Nova Lista]");
+            Console.Write("[Nova Pilha]");
             Console.WriteLine("\n");
 
-            listaDeContato = new Lista();
+            pilhaDeContatos = new Pilha();
 
-            Console.WriteLine("Será criada uma nova lista de contatos...");
-            Console.WriteLine("Escolha o tamanho desejado para essa lista: ");
+            Console.WriteLine("Será criada uma nova pilha de contatos...");
+            Console.Write("Escolha o tamanho desejado para essa pilha: ");
             var maxTam = Int32.Parse(Console.ReadLine());
-            listaDeContato.CriaListaVazia(maxTam);
+            pilhaDeContatos.CriaPilhaVazia(maxTam);
 
             Thread.Sleep(500);
-            Console.WriteLine("A lista de contatos foi criada, com capacidade para {0} contatos.", maxTam);
+            Console.WriteLine("A pilha de contatos foi criada, com capacidade para {0} contatos.", maxTam);
         }
         #endregion
 
@@ -535,7 +586,7 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 2: 
         /// </summary>
-        private static void novoContato_Pilha()
+        private static void NovoContato_Pilha()
         {
             Console.Clear();
             Console.Write("[Novo Contato]");
@@ -543,7 +594,7 @@ namespace ListaDeContatos
 
             var contato = new Contato();
 
-            Console.WriteLine("Entre com os dados do novo contato a ser adicionado na lista...");
+            Console.WriteLine("Entre com os dados do novo contato a ser adicionado na pilha...");
             Thread.Sleep(500);
 
             Console.Write("Nome: ");
@@ -557,7 +608,7 @@ namespace ListaDeContatos
 
             contato.ID_Contato = Guid.NewGuid();
 
-            listaDeContato.Insere(contato);
+            pilhaDeContatos.Empilha(contato);
 
             Console.WriteLine("O contato {0} foi inserido com sucesso.", contato.Nome);
         }
@@ -567,86 +618,212 @@ namespace ListaDeContatos
         /// <summary>
         /// Atividade 3: 
         /// </summary>
-        private static void removerContato_Pilha()
+        private static void RemoverContato_Pilha()
         {
             Console.Clear();
-            Console.Write("[Remover Contato]");
+            Console.Write("[Desempilhar Contato]");
             Console.WriteLine("\n");
 
-            //var contato = new Contato();
-            string nomeDoContato;
-
-            Console.Write("Entre com o nome do contato que deseja remover da lista: ");
-            //contato.Nome = Console.ReadLine();
-            nomeDoContato = Console.ReadLine();
-            //listaDeContato.Retira(contato);
-
-            listaDeContato.Retira(nomeDoContato);
+            pilhaDeContatos.Desempilha();
 
             Console.WriteLine("\n");
-            Console.WriteLine("O contato {0} será removido.", listaDeContato.item);
+            Console.WriteLine("O último contato foi removido.");
         }
         #endregion
 
         #region [Editar Contato]
-        /// <summary>
-        /// Atividade 4: 
-        /// </summary>
-        public static void editarContato_Pilha()
-        {
-            Console.Clear();
-            Console.Write("[Editar Contato]");
-            Console.WriteLine("\n");
+        ///// <summary>
+        ///// Atividade 4: 
+        ///// </summary>
+        //public static void EditarContato_Pilha()
+        //{
+        //    Console.Clear();
+        //    Console.Write("[Editar Contato]");
+        //    Console.WriteLine("\n");
 
 
-        }
+        //}
         #endregion
 
         #region [Ver Contato]
-        /// <summary>
-        /// Atividade 5: 
-        /// </summary>
-        public static void verContato_Pilha()
-        {
-            Console.Clear();
-            Console.Write("[Ver Contato]");
-            Console.WriteLine("\n");
+        ///// <summary>
+        ///// Atividade 5: 
+        ///// </summary>
+        //public static void VerContato_Pilha()
+        //{
+        //    Console.Clear();
+        //    Console.Write("[Ver Contato]");
+        //    Console.WriteLine("\n");
 
-            //var listaDeContato = new Lista();
-            string nomeDoContato;
-            var contato = new Contato();
+        //    //var listaDeContato = new Lista();
+        //    string nomeDoContato;
+        //    var contato = new Contato();
 
-            Console.Write("Entre com o nome do contato que deseja pesquisar: ");
-            nomeDoContato = Console.ReadLine();
+        //    Console.Write("Entre com o nome do contato que deseja pesquisar: ");
+        //    nomeDoContato = Console.ReadLine();
 
-            listaDeContato.Pesquisa(nomeDoContato);
+        //    listaDeContato.Pesquisa(nomeDoContato);
 
-            Thread.Sleep(500);
+        //    Thread.Sleep(500);
 
-            Console.WriteLine("\n");
+        //    Console.WriteLine("\n");
 
-            Console.WriteLine("Nome: {0}", contato.Nome);
-            Console.WriteLine("Telefone: {0}", contato.Telefone);
-            Console.WriteLine("Email: {0}", contato.Email);
-        }
+        //    Console.WriteLine("Nome: {0}", contato.Nome);
+        //    Console.WriteLine("Telefone: {0}", contato.Telefone);
+        //    Console.WriteLine("Email: {0}", contato.Email);
+        //}
         #endregion
 
         #region [Imprimir todos os Contatos]
+        ///// <summary>
+        ///// Atividade 6: 
+        ///// </summary>
+        //public static void ImprimirTodosOsContatos_Pilha()
+        //{
+        //    Console.Clear();
+        //    Console.Write("[Imprimir todos os Contatos]");
+        //    Console.WriteLine("\n");
+
+        //    Console.WriteLine("Lista de contatos: ");
+        //    Console.WriteLine("\n");
+
+        //    while (!pilhaDeContatos.IsPilhaVazia())
+        //        pilhaDeContatos.Imprime();
+        //}
+        #endregion
+        #endregion
+
+        #region ------Pilha Encadeada------
+
+        #region [Criar Pilha Encadeada]
         /// <summary>
-        /// Atividade 6: 
+        /// Atividade 1: 
         /// </summary>
-        public static void imprimirTodosOsContatos_Pilha()
+        private static void CriaPilha_Encadeada()
         {
             Console.Clear();
-            Console.Write("[Imprimir todos os Contatos]");
+            Console.Write("[Nova Pilha Encadeada]");
             Console.WriteLine("\n");
 
-            Console.WriteLine("Lista de contatos: ");
-            Console.WriteLine("\n");
+            pilhaDeContatosEncadeada = new PilhaEncadeada();
 
-            while (!listaDeContato.IsListaVazia())
-                listaDeContato.Imprime();
+            Console.WriteLine("Será criada uma nova pilha de contatos...");
+            
+            pilhaDeContatosEncadeada.CriaPilhaVazia();
+
+            Thread.Sleep(500);
+            Console.WriteLine("A pilha encadeada de contatos foi criada.");
         }
+        #endregion
+
+        #region [Novo Contato]
+        /// <summary>
+        /// Atividade 2: 
+        /// </summary>
+        private static void NovoContato_Pilha_Encadeada()
+        {
+            Console.Clear();
+            Console.Write("[Novo Contato]");
+            Console.WriteLine("\n");
+
+            var contato = new Contato();
+
+            Console.WriteLine("Entre com os dados do novo contato a ser adicionado na pilha...");
+            Thread.Sleep(500);
+
+            Console.Write("Nome: ");
+            contato.Nome = Console.ReadLine();
+
+            Console.Write("Telefone: ");
+            contato.Telefone = Int32.Parse(Console.ReadLine());
+
+            Console.Write("Email: ");
+            contato.Email = Console.ReadLine();
+
+            contato.ID_Contato = Guid.NewGuid();
+
+            pilhaDeContatosEncadeada.Empilha(contato);
+
+            Console.WriteLine("O contato {0} foi inserido com sucesso.", contato.Nome);
+        }
+        #endregion
+
+        #region [Remover Contato]
+        /// <summary>
+        /// Atividade 3: 
+        /// </summary>
+        private static void RemoverContato_Pilha_Encadeada()
+        {
+            Console.Clear();
+            Console.Write("[Desempilhar Contato]");
+            Console.WriteLine("\n");
+
+            pilhaDeContatosEncadeada.Desempilha();
+
+            Console.WriteLine("\n");
+            Console.WriteLine("O último contato foi removido.");
+        }
+        #endregion
+
+        #region [Editar Contato]
+        ///// <summary>
+        ///// Atividade 4: 
+        ///// </summary>
+        //public static void EditarContato_Pilha()
+        //{
+        //    Console.Clear();
+        //    Console.Write("[Editar Contato]");
+        //    Console.WriteLine("\n");
+
+
+        //}
+        #endregion
+
+        #region [Ver Contato]
+        ///// <summary>
+        ///// Atividade 5: 
+        ///// </summary>
+        //public static void VerContato_Pilha()
+        //{
+        //    Console.Clear();
+        //    Console.Write("[Ver Contato]");
+        //    Console.WriteLine("\n");
+
+        //    //var listaDeContato = new Lista();
+        //    string nomeDoContato;
+        //    var contato = new Contato();
+
+        //    Console.Write("Entre com o nome do contato que deseja pesquisar: ");
+        //    nomeDoContato = Console.ReadLine();
+
+        //    listaDeContato.Pesquisa(nomeDoContato);
+
+        //    Thread.Sleep(500);
+
+        //    Console.WriteLine("\n");
+
+        //    Console.WriteLine("Nome: {0}", contato.Nome);
+        //    Console.WriteLine("Telefone: {0}", contato.Telefone);
+        //    Console.WriteLine("Email: {0}", contato.Email);
+        //}
+        #endregion
+
+        #region [Imprimir todos os Contatos]
+        ///// <summary>
+        ///// Atividade 6: 
+        ///// </summary>
+        //public static void ImprimirTodosOsContatos_Pilha_Encadeada()
+        //{
+        //    Console.Clear();
+        //    Console.Write("[Imprimir todos os Contatos]");
+        //    Console.WriteLine("\n");
+
+        //    Console.WriteLine("Pilha de contatos: ");
+        //    Console.WriteLine("\n");
+
+        //    while (!pilhaDeContatosEncadeada.IsPilhaVazia())
+        //        pilhaDeContatosEncadeada.Imprime();
+        //}
         #endregion
         #endregion
 

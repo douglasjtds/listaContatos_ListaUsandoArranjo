@@ -11,7 +11,7 @@ namespace ListaDeContatos
         private Object[] item;
         private int topo;
 
-        public void criaPilhaVazia(int maxTam)
+        public void CriaPilhaVazia(int maxTam)
         {
             this.item = new Object[maxTam];
             this.topo = 0;
@@ -20,7 +20,6 @@ namespace ListaDeContatos
         #region Métodos herdados da interface base
         public void Empilha(object x)
         {
-            //throw new NotImplementedException();
             if (topo == item.Length)
                 throw new Exception("Erro: A pilha está cheia.");
             else
@@ -29,7 +28,6 @@ namespace ListaDeContatos
 
         public object Desempilha()
         {
-            //throw new NotImplementedException();
             if (IsPilhaVazia())
                 throw new Exception("Erro: A pilha está vazia.");
             return item[--topo];
@@ -38,13 +36,11 @@ namespace ListaDeContatos
 
         public bool IsPilhaVazia()
         {
-            //throw new NotImplementedException();
             return (topo == 0);
         }
 
         public int Tamanho()
         {
-            //throw new NotImplementedException();
             return topo;
         }
         #endregion

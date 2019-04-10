@@ -16,7 +16,7 @@ namespace ListaDeContatos
         public Celula topo;
         private int tam;
 
-        public void CriaListaVazia()
+        public void CriaPilhaVazia()
         {
             topo = null;
             tam = 0;
@@ -26,17 +26,17 @@ namespace ListaDeContatos
         #region Métodos herdados da interface base
         public void Empilha(object x)
         {
-            //throw new NotImplementedException();
             Celula aux = topo;
-            topo = new Celula();
-            topo.item = x;
-            topo.prox = aux;
+            topo = new Celula()
+            {
+                item = x,
+                prox = aux
+            };
             tam++;
         }
 
         public object Desempilha()
         {
-            //throw new NotImplementedException();
             if (IsPilhaVazia())
                 throw new Exception("Erro: A pilha está vazia.");
             Object item = topo.item;
@@ -46,7 +46,6 @@ namespace ListaDeContatos
 
         public bool IsPilhaVazia()
         {
-            //throw new NotImplementedException();
             return (topo == null);
         }
         #endregion
