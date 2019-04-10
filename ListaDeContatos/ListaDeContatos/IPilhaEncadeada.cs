@@ -11,6 +11,6 @@ namespace ListaDeContatos
         void Empilha(Object x);
         Object Desempilha();
         bool IsPilhaVazia();
-        //int Tamanho();
+        int Tamanho();
     }
 }
