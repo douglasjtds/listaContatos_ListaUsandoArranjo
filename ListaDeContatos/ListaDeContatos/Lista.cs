@@ -179,7 +179,7 @@ namespace ListaDeContatos
         /// Atividade 1: Escreva uma função para trocar os elementos m e n de uma lista por arranjo 
         /// (onde m e n devem ser chaves dos itens a serem trocados na lista)
         /// </summary>
-        public void TrocaElementosM_N()
+        public void TrocaElementosM_N(object chaveM, object chaveN)
         {
 
         }

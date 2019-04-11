@@ -105,7 +105,7 @@ namespace ListaDeContatos
         /// Atividade 2: Escreva uma função para trocar os elementos m e n de uma lista auto-referenciada 
         /// (onde m e n devem ser chaves dos itens a serem trocados na lista)
         /// </summary>
-        public void TrocaElementosM_N_Encadeada()
+        public void TrocaElementosM_N_Encadeada(object chaveM, object chaveN)
         {
 
         }

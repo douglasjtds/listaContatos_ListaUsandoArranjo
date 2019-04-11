@@ -55,7 +55,7 @@ namespace ListaDeContatos
                         break;
                 }
 
-            } while (tipoDeLista != 0); 
+            } while (tipoDeLista != 0);
             #endregion
         }
 
@@ -277,9 +277,6 @@ namespace ListaDeContatos
 
         #region ------Lista Comum------
         #region [Criar lista]
-        /// <summary>
-        /// Atividade 1: 
-        /// </summary>
         private static void CriaLista()
         {
             Console.Clear();
@@ -420,9 +417,6 @@ namespace ListaDeContatos
         #region ------Lista Encadeada------
 
         #region [Criar lista Encadeada]
-        /// <summary>
-        /// Atividade 1: 
-        /// </summary>
         private static void CriaLista_Encadeada()
         {
             Console.Clear();
@@ -561,9 +555,6 @@ namespace ListaDeContatos
 
         #region ------Pilha Comum------
         #region [Criar Pilha]
-        /// <summary>
-        /// Atividade 1: 
-        /// </summary>
         private static void CriaPilha()
         {
             Console.Clear();
@@ -691,14 +682,38 @@ namespace ListaDeContatos
         //        pilhaDeContatos.Imprime();
         //}
         #endregion
+
+        #region Atividade 5 - Aula Prática 4
+        /// <summary>
+        /// Atividade 5: Escreva uma função para determinar se uma cadeia de caracteres (string) é da forma: 
+        /// x C y onde x e y são cadeias de caracteres compostas por letras ‘A’ e/ou ‘B’, 
+        /// e y é o inverso de x. Isto é, se x = “ABABBA”, y deve equivaler a “ABBABA”. 
+        /// Em cada ponto, você só poderá ler o próximo caractere da cadeia(é mandatório o uso de pilha).
+        /// </summary>
+        public static void CadeiaDeCaracteres_Pilha()
+        {
+            Console.Clear();
+            Console.Write("[Verificando cadeia de caractéres]");
+            Console.WriteLine("\n");
+
+            string cadeiaDeCaracteresInseridaPeloUsuario;
+            string cadeiaInvertida;
+
+            Console.Write("Entre com a cadeia de caracteres que deseja que seja verificada.");
+            cadeiaDeCaracteresInseridaPeloUsuario = Console.ReadLine();
+
+            cadeiaInvertida = pilhaDeContatos.VerificaCadeiaCaracteres(cadeiaDeCaracteresInseridaPeloUsuario);
+
+            Console.WriteLine();
+        }
+
+        #endregion
+
         #endregion
 
         #region ------Pilha Encadeada------
 
         #region [Criar Pilha Encadeada]
-        /// <summary>
-        /// Atividade 1: 
-        /// </summary>
         private static void CriaPilha_Encadeada()
         {
             Console.Clear();
@@ -708,7 +723,7 @@ namespace ListaDeContatos
             pilhaDeContatosEncadeada = new PilhaEncadeada();
 
             Console.WriteLine("Será criada uma nova pilha de contatos...");
-            
+
             pilhaDeContatosEncadeada.CriaPilhaVazia();
 
             Thread.Sleep(500);

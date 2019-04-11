@@ -44,5 +44,12 @@ namespace ListaDeContatos
             return topo;
         }
         #endregion
+
+        public string VerificaCadeiaCaracteres(string stringInformada)
+        {
+            throw new NotImplementedException();
+            //stringInformada.Split();
+            //return null;
+        }
     }
 }
