@@ -28,7 +28,7 @@ namespace ListaDeContatos
 
             for (int p = 0; p < ultimo; p++) //percorre a lista
             {
-                if (item[p].Equals(chave))
+                if (((Contato)(item[p])).Nome.Equals(chave))
                     return item[p]; //retorna o item encontrado
             }
             return null;
@@ -94,7 +94,7 @@ namespace ListaDeContatos
         public object Primeiro()
         {
             pos = -1;
-            return Proximo(); 
+            return Proximo();
         }
 
         public bool IsListaVazia()
@@ -142,7 +142,7 @@ namespace ListaDeContatos
         public void Insere(Object x, Object chave)
         {
             //Object objetoAux = null;
-            if(ultimo >= item.Length)
+            if (ultimo >= item.Length)
                 Console.WriteLine("Lista cheia!");
             else
             {
@@ -166,11 +166,11 @@ namespace ListaDeContatos
             return objConcat;
         }
 
-        public void Copia(Object [] obj) //CONFERIR COMO SERIA ESSA COPIA
+        public void Copia(Object[] obj) //CONFERIR COMO SERIA ESSA COPIA
         {
             Object[] objCopiado = new Object[item.Length];
             for (int i = 0; i > obj.Length; i++)
-                objCopiado[i] = obj; 
+                objCopiado[i] = obj;
         }
         #endregion
 
