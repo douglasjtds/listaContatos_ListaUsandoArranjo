@@ -35,7 +35,7 @@ namespace ListaDeContatos
                 switch (tipoDeLista)
                 {
                     case 1:
-                        escolheuListaComum();
+                        EscolheuListaComum();
                         break;
                     case 2:
                         escolheuListaEncadeada();
@@ -49,7 +49,7 @@ namespace ListaDeContatos
             #endregion
         }
 
-        public static void escolheuListaComum()
+        public static void EscolheuListaComum()
         {
             #region [Estrutura de repetição para escolha da atividade a ser executada.]
             int opcao;
