@@ -8,91 +8,107 @@ namespace ListaDeContatos
 {
     public class ListaEncadeada : IListaEncadeada  //utilizando auto-referenciamento (exemplo Aula 4)
     {
-        //cria lista vazia
+        public class Celula
+        {
+            internal object primeiro;
+            internal Celula pos;
+            internal Object item;
+            internal Celula prox;
+        }
+        public Celula primeiro, ultimo, pos;
+
         public void CriaListaVazia()
         {
-            //throw new NotImplementedException();
-            //var celula = new Celula();
-            //celula.primeiro = null;
-            //celula.pos =
-            //this.primeiro = new Celula();
-            //this.pos = this.primeiro;
-            //this.ultimo = this.primeiro; this.primeiro.prox = null;
+            primeiro = new Celula();
+            pos = primeiro;
+            ultimo = primeiro;
+            primeiro.prox = null;
         }
 
         #region Métodos herdados da interface
         public object Pesquisa(object chave)
         {
-            //if (IsListaVazia() || chave == null)
-            //    return null;
+            if (IsListaVazia() || chave == null)
+                return null;
 
-            //Celula aux = primeiro;
-            //while (aux.prox)
-            throw new NotImplementedException();
+            Celula aux = primeiro;
+            while (aux.prox != null)
+            {
+                if (((Contato)(aux.prox.item)).Nome.Equals(chave))
+                    return aux.prox.item;
+                aux = aux.prox;
+            }
+            return null;
         }
 
         public void Insere(object x)
         {
-            throw new NotImplementedException();
-            //this.ultimo.prox = new Celula();
-            //this.ultimo = this.ultimo.prox;
-            //this.ultimo.item = x; this.ultimo.prox = null;
+            this.ultimo.prox = new Celula();
+            this.ultimo = this.ultimo.prox;
+            this.ultimo.item = x; this.ultimo.prox = null;
         }
 
         public object Retira(object chave)
         {
-            throw new NotImplementedException();
-            // if (this.vazia() | | (chave == null))
-            //     throw new Exception
-            //     ("Erro : Lista vazia ou chave invalida");
-            // Celula aux = this.primeiro;
-            // while (aux.prox != null && !aux.prox.item.equals(chave))
-            //     aux = aux.prox;
-            // if (aux.prox == null) return null; / / não encontrada
-            //Celula q = aux.prox;
-            // Object item = q.item; aux.prox = q.prox;
-            // if (aux.prox == null) this.ultimo = aux; return item;
+            if (IsListaVazia() || (chave == null))
+                throw new Exception
+                ("Erro : Lista vazia ou chave invalida");
+            Celula aux = this.primeiro;
+            while (aux.prox != null && !((Contato)(aux.prox.item)).Nome.Equals(chave))
+                aux = aux.prox;
+            if (aux.prox == null) return null; // não encontrada
+            Celula q = aux.prox;
+            Object item = q.item; aux.prox = q.prox;
+            if (aux.prox == null) this.ultimo = aux; return item;
         }
 
         public object RetiraPrimeiro()
         {
-            throw new NotImplementedException();
-            //if (this.vazia())
-            //    throw new Exception("Erro : Lista vazia");
-            //Celula aux = this.primeiro; Celula q = aux.prox;
-            //Object item = q.item; aux.prox = q.prox;
-            //if (aux.prox == null) this.ultimo = aux; return item;
+            if (IsListaVazia())
+                throw new Exception("Erro : Lista vazia");
+            Celula aux = primeiro; Celula q = aux.prox;
+            Object item = q.item; aux.prox = q.prox;
+            if (aux.prox == null)
+                ultimo = aux; return item;
         }
         public object Primeiro()
         {
-            throw new NotImplementedException();
-            //this.pos = primeiro;
-            //return proximo();
+            pos = primeiro;
+            return Proximo();
         }
 
         public bool IsListaVazia()
         {
-            throw new NotImplementedException();
-            //return (this.primeiro == this.ultimo);
+            return (primeiro == ultimo);
         }
         #endregion
 
         public Object Proximo()
         {
-            throw new NotImplementedException();
-            //this.pos = this.pos.prox;
-            //if (this.pos == null) return null;
-            //else return this.pos.item;
+            pos = pos.prox;
+            if (pos == null) return null;
+            else return pos.item;
         }
 
         public void Imprime()
         {
-            //Celula aux = this.primeiro.prox;
-            //while (aux != null)
-            //{
-            //    Console.WriteLine(aux.item.toString());
-            //    aux = aux.prox;
-            //}
+            Celula aux = this.primeiro.prox;
+            while (aux != null)
+            {
+                Console.WriteLine(aux.item.ToString());
+                aux = aux.prox;
+            }
         }
+
+        #region Aula Prática 4 - [Atividade 2]
+        /// <summary>
+        /// Atividade 2: Escreva uma função para trocar os elementos m e n de uma lista auto-referenciada 
+        /// (onde m e n devem ser chaves dos itens a serem trocados na lista)
+        /// </summary>
+        public void TrocaElementosM_N_Encadeada(object chaveM, object chaveN)
+        {
+
+        }
+        #endregion
     }
 }

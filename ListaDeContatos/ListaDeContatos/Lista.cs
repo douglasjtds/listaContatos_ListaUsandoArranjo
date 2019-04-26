@@ -11,7 +11,6 @@ namespace ListaDeContatos
         public Object[] item;
         private int primeiro, ultimo, pos;
 
-        //cria lista vazia
         public void CriaListaVazia(int maxTam)
         {
             item = new Object[maxTam];
@@ -29,7 +28,7 @@ namespace ListaDeContatos
 
             for (int p = 0; p < ultimo; p++) //percorre a lista
             {
-                if (item[p].Equals(chave))
+                if (((Contato)(item[p])).Nome.Equals(chave))
                     return item[p]; //retorna o item encontrado
             }
             return null;
@@ -95,7 +94,7 @@ namespace ListaDeContatos
         public object Primeiro()
         {
             pos = -1;
-            return Proximo(); 
+            return Proximo();
         }
 
         public bool IsListaVazia()
@@ -105,7 +104,6 @@ namespace ListaDeContatos
         #endregion
 
         #region Outros métodos que não estão na interface
-        //completando com outros métodos
         public object Proximo()
         {
             pos++;
@@ -144,7 +142,7 @@ namespace ListaDeContatos
         public void Insere(Object x, Object chave)
         {
             //Object objetoAux = null;
-            if(ultimo >= item.Length)
+            if (ultimo >= item.Length)
                 Console.WriteLine("Lista cheia!");
             else
             {
@@ -168,13 +166,25 @@ namespace ListaDeContatos
             return objConcat;
         }
 
-        public void Copia(Object [] obj) //CONFERIR COMO SERIA ESSA COPIA
+        public void Copia(Object[] obj) //CONFERIR COMO SERIA ESSA COPIA
         {
             Object[] objCopiado = new Object[item.Length];
             for (int i = 0; i > obj.Length; i++)
-                objCopiado[i] = obj; 
-        } 
+                objCopiado[i] = obj;
+        }
         #endregion
+
+        #region Aula Prática 4 - [Atividade 1]
+        /// <summary>
+        /// Atividade 1: Escreva uma função para trocar os elementos m e n de uma lista por arranjo 
+        /// (onde m e n devem ser chaves dos itens a serem trocados na lista)
+        /// </summary>
+        public void TrocaElementosM_N(object chaveM, object chaveN)
+        {
+
+        }
+        #endregion
+
         #endregion
     }
 }

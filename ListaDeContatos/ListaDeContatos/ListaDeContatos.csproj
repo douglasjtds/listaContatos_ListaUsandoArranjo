@@ -47,8 +47,12 @@
     <Compile Include="Contato.cs" />
     <Compile Include="IListaEncadeada.cs" />
     <Compile Include="ILista.cs" />
+    <Compile Include="IPilha.cs" />
+    <Compile Include="IPilhaEncadeada.cs" />
     <Compile Include="ListaEncadeada.cs" />
     <Compile Include="Lista.cs" />
+    <Compile Include="Pilha.cs" />
+    <Compile Include="PilhaEncadeada.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
